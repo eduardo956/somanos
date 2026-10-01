@@ -114,9 +114,9 @@ export const ContactB2B = () => {
               <h3 className="font-display text-2xl text-white uppercase tracking-wide mb-1">
                 Bares, Resto & Eventos
               </h3>
-              <div className="font-mono text-xs text-[#d4af37] font-bold mb-3 truncate">
+              <a href={`mailto:${companyInfo.email}`} className="font-mono text-xs text-[#d4af37] font-bold mb-3 truncate hover:underline block">
                 {companyInfo.email}
-              </div>
+              </a>
               <p className="text-gray-400 font-sans text-xs mb-6 leading-relaxed">
                 Atención comercial a bares, restaurantes gastronómicos y eventos privados con barriles (kegs) y cajas máster.
               </p>

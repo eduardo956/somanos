@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { AgeProvider } from './context/AgeContext';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
@@ -44,6 +45,8 @@ export function App() {
             <Footer />
 
           </div>
+          {/* Vercel Analytics Component */}
+          <Analytics />
         </ToastProvider>
       </CartProvider>
     </AgeProvider>

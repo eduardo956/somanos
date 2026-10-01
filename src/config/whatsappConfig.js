@@ -1,8 +1,8 @@
 // Configuración centralizada de WhatsApp para Somanos Cervecería
 
 export const WHATSAPP_CONFIG = {
-  phoneNumber: "+51 922 187 720",
-  phoneClean: "51922187720",
+  phoneNumber: "+51 984 228 573",
+  phoneClean: "51984228573",
 
   // Mensajes predeterminados
   defaultMessages: {

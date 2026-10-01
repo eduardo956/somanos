@@ -84,7 +84,9 @@ export const Footer = () => {
             </span>
             <div className="flex flex-col gap-1.5 font-sans text-xs text-gray-400">
               <p>{companyInfo.address}</p>
-              <p className="font-mono text-[0.7rem] text-gray-400 mt-1">{companyInfo.email}</p>
+              <a href={`mailto:${companyInfo.email}`} className="font-mono text-[0.7rem] text-gray-400 hover:text-[#d4af37] mt-1 transition-colors block">
+                {companyInfo.email}
+              </a>
               <p className="font-mono text-xs text-[#d4af37] font-bold">{companyInfo.phone}</p>
               <a
                 href={companyInfo.instagram}
