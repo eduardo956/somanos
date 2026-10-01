@@ -110,11 +110,11 @@ export const StoryManifesto = () => {
 
               <div className="p-6 bg-[#0b0b0d] border border-[#353437]/60 flex flex-col justify-between">
                 <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
-                  Días de Maduración
+                  Dias de Maduracion
                 </span>
                 <div className="my-3">
                   <span className="font-display text-4xl lg:text-5xl text-white font-bold">28+</span>
-                  <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">DÍAS</span>
+                  <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">DIAS</span>
                 </div>
                 <p className="text-xs text-gray-400 font-sans">
                   Sin apuros industriales; respetamos el tiempo sagrado de reposo cervecero.

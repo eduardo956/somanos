@@ -40,7 +40,7 @@ export const Footer = () => {
                   {companyInfo.name}
                 </span>
                 <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#d4af37] mt-1">
-                  Maestría Artesanal en el Desierto Costero
+                  Maestria Artesanal en el Desierto Costero
                 </span>
               </div>
             </div>
@@ -63,13 +63,13 @@ export const Footer = () => {
             </span>
             <div className="flex flex-col gap-2 font-sans text-xs">
               <a href="#cervezas" className="text-gray-400 hover:text-[#d4af37] transition-colors">
-                Línea de Cervezas
+                Linea de Cervezas
               </a>
               <a href="#historia" className="text-gray-400 hover:text-[#d4af37] transition-colors">
                 Nuestra Historia
               </a>
               <a href="#packs" className="text-gray-400 hover:text-[#d4af37] transition-colors">
-                Packs & Envíos
+                Packs & Envios
               </a>
               <a href="#contacto" className="text-gray-400 hover:text-[#d4af37] transition-colors">
                 Contacto Directo
@@ -80,7 +80,7 @@ export const Footer = () => {
           {/* Column 3: Location */}
           <div className="flex flex-col gap-3">
             <span className="font-mono text-xs uppercase tracking-wider text-white border-b border-[#353437] pb-2 font-bold max-w-[200px]">
-              Ubicación & Contacto
+              Ubicacion & Contacto
             </span>
             <div className="flex flex-col gap-1.5 font-sans text-xs text-gray-400">
               <p>{companyInfo.address}</p>

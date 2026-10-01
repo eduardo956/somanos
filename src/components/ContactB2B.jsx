@@ -21,10 +21,10 @@ export const ContactB2B = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div className="flex flex-col">
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
-              Canal Directo & Atención al Cliente
+              Canal Directo & Atencion al Cliente
             </span>
             <h2 className="font-display text-3xl md:text-5xl text-white uppercase tracking-wide mt-1">
-              Contáctanos y Haz Tu Pedido
+              Contactanos y Haz Tu Pedido
             </h2>
           </div>
           <p className="text-gray-400 font-sans text-sm max-w-md">
@@ -47,7 +47,7 @@ export const ContactB2B = () => {
                 </span>
               </div>
               <h3 className="font-display text-2xl text-white uppercase tracking-wide mb-1">
-                Línea Directa WhatsApp
+                Linea Directa WhatsApp
               </h3>
               <div className="font-mono text-base text-[#d4af37] font-bold mb-3">
                 {WHATSAPP_CONFIG.phoneNumber}

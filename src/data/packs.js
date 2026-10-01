@@ -2,7 +2,7 @@ export const packs = [
   {
     id: "pack-6x",
     title: "Pack Introductorio 6x",
-    categoryTag: "Iniciación Cervecera",
+    categoryTag: "Iniciacion Cervecera",
     price: 85.00,
     originalPrice: null,
     badge: null,
@@ -18,11 +18,11 @@ export const packs = [
   },
   {
     id: "pack-12x",
-    title: "Caja Degustación 12x",
+    title: "Caja Degustacion 12x",
     categoryTag: "Mejor Valor",
     price: 160.00,
     originalPrice: 175.00,
-    badge: "Más Popular",
+    badge: "Mas Popular",
     isPopular: true,
     items: [
       "4x Travesia Pilsner 330ml",
@@ -32,7 +32,7 @@ export const packs = [
       "Envío gratuito en Ica urbana"
     ],
     ctaText: "Comprar Pack 12x",
-    waMessage: "Hola, deseo pedir la Caja Degustación 12x por S/ 160.00"
+    waMessage: "Hola, deseo pedir la Caja Degustacion 12x por S/ 160.00"
   },
   {
     id: "pack-24x",

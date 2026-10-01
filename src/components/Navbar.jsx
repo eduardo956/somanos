@@ -10,7 +10,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Cervezas', href: '#cervezas' },
     { name: 'Nuestra Historia', href: '#historia' },
-    { name: 'Packs & Envíos', href: '#packs' },
+    { name: 'Packs & Envios', href: '#packs' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
