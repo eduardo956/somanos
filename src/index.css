@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Oswald', sans-serif;
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #f1d479;
+  --color-gold-dark: #9b7c23;
+  --color-surface: #121114;
+  --color-surface-low: #18171a;
+  --color-surface-container: #1f1e22;
+  --color-surface-high: #28272b;
+  --color-surface-lowest: #0b0b0d;
+  --color-surface-border: #353437;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    background-color: var(--color-surface);
+    color: #e5e1e4;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tag {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Ticker Marquee Animation */
+@keyframes tickerMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-infinite {
+  display: inline-flex;
+  width: max-content;
+  animation: tickerMarquee 28s linear infinite;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #353437;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
