@@ -38,10 +38,10 @@ export const BeerCatalog = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div className="flex flex-col">
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
-              Catálogo de Temporada
+              Catalogo de Temporada
             </span>
             <h2 className="font-display text-3xl md:text-5xl text-white uppercase tracking-wide mt-1">
-              Nuestra Colección de Autor
+              Nuestra Coleccion de Autor
             </h2>
           </div>
           <p className="text-gray-400 font-sans text-sm max-w-md">

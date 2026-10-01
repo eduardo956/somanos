@@ -2,11 +2,11 @@ import React from 'react';
 
 export const Ticker = () => {
   const items = [
-    { text: "CERVECERÍA DE AUTOR", gold: true },
+    { text: "CERVECERIA DE AUTOR", gold: true },
     { text: "AGUA DE POZO PROFUNDO", gold: false },
-    { text: "FERMENTACIÓN LENTA", gold: false },
+    { text: "FERMENTACION LENTA", gold: false },
     { text: "MAESTRO CERVECERO LVJ", gold: true },
-    { text: "HECHO EN ICA · PERÚ", gold: false },
+    { text: "HECHO EN ICA · PERU", gold: false },
     { text: "100% GRANOS SELECTOS", gold: false },
     { text: "DESPACHO DIRECTO DE BODEGA", gold: true }
   ];

@@ -33,7 +33,7 @@ export const Hero = () => {
         <div className="flex items-center gap-2 mb-6">
           <span className="inline-block w-2.5 h-2.5 bg-[#d4af37]"></span>
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
-            Lote Artesanal No. 24 · Ica, Perú · Alt. 406 m.s.n.m
+            Lote Artesanal No. 24 · Ica, Peru · Alt. 406 m.s.n.m
           </span>
         </div>
 
@@ -42,7 +42,7 @@ export const Hero = () => {
           {/* Text Column */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none">
-              MAESTRÍA ARTESANAL <br className="hidden sm:inline" />
+              MAESTRIA ARTESANAL <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f1d479] via-white to-gray-400">
                 FORJADA EN ICA
               </span>
@@ -61,7 +61,7 @@ export const Hero = () => {
                 330 ML
               </span>
               <span className="px-3 py-1 bg-[#28272b] border border-[#d4af37]/40 text-[#f1d479] font-mono text-xs uppercase tracking-wider font-semibold">
-                Edición Limitada
+                Edicion Limitada
               </span>
               <span className="px-3 py-1 bg-[#1f1e22] border border-[#353437] text-gray-300 font-mono text-xs uppercase tracking-wider">
                 Terroir Costero

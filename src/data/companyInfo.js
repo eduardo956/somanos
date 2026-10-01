@@ -1,6 +1,6 @@
 export const companyInfo = {
   name: "SOMANOS",
-  tagline: "CERVECERÍA ARTESANAL · ICA, PERÚ",
+  tagline: "CERVECERIA ARTESANAL · ICA, PERU",
   fullTitle: "SOMANOS E.I.R.L.",
   ruc: "20601839281",
   sanitaryReg: "P5824622N JAVLLP",
