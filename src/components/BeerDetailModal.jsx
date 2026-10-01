@@ -47,24 +47,55 @@ export const BeerDetailModal = ({ beer, onClose }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start pt-2">
           
-          {/* Image Column - Styled display card */}
-          <div className="md:col-span-5 flex flex-col items-center justify-center bg-[#09080b] border border-[#353437] p-4 relative aspect-[4/3] sm:aspect-square w-full rounded-sm overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
-            <img
-              src={beer.image}
-              alt={beer.title}
-              className="w-full h-full object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-500 ease-out"
-            />
-            {beer.style && (
-              <span className="absolute top-3 left-3 bg-[#d4af37] text-black font-mono text-[0.65rem] px-2.5 py-1 uppercase tracking-wider font-bold shadow-lg z-20 rounded-xs">
-                {beer.style}
-              </span>
-            )}
-            {beer.isPopular && (
-              <span className="absolute top-3 right-3 bg-black/80 border border-[#d4af37]/60 text-[#d4af37] font-mono text-[0.65rem] px-2.5 py-1 uppercase tracking-wider font-bold z-20 backdrop-blur-xs flex items-center gap-1">
-                <Sparkles className="w-3 h-3" /> Más Vendido
-              </span>
-            )}
+          {/* Image & Tasting Notes Column */}
+          <div className="md:col-span-5 flex flex-col gap-4">
+            <div className="flex flex-col items-center justify-center bg-[#09080b] border border-[#353437] p-4 relative aspect-square w-full rounded-sm overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
+              <img
+                src={beer.image}
+                alt={beer.title}
+                className="w-full h-full object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
+              {beer.style && (
+                <span className="absolute top-3 left-3 bg-[#d4af37] text-black font-mono text-[0.65rem] px-2.5 py-1 uppercase tracking-wider font-bold shadow-lg z-20 rounded-xs">
+                  {beer.style}
+                </span>
+              )}
+              {beer.isPopular && (
+                <span className="absolute top-3 right-3 bg-black/80 border border-[#d4af37]/60 text-[#d4af37] font-mono text-[0.65rem] px-2.5 py-1 uppercase tracking-wider font-bold z-20 backdrop-blur-xs flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" /> Más Vendido
+                </span>
+              )}
+            </div>
+
+            {/* Desktop Only: Tasting Notes & Pairings under image */}
+            <div className="hidden md:flex flex-col gap-4">
+              {beer.tastingNotes && (
+                <div className="flex flex-col gap-1.5 bg-[#141316] border-l-2 border-[#d4af37] p-2.5 rounded-r-sm">
+                  <h4 className="font-mono text-[0.7rem] uppercase text-[#d4af37] tracking-wider font-bold mb-0.5">
+                    Notas de Cata:
+                  </h4>
+                  <div className="flex flex-col gap-1 text-xs text-gray-300 font-sans leading-snug">
+                    {beer.tastingNotes.map((note, idx) => (
+                      <div key={idx} className="flex items-start gap-1.5">
+                        <span className="text-[#d4af37] text-[0.6rem] mt-0.5 shrink-0">■</span>
+                        <span>{note}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {beer.pairings && (
+                <div className="flex items-start gap-2 bg-[#141316] border border-[#353437]/60 p-3 rounded-sm">
+                  <Utensils className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
+                  <div className="text-xs text-gray-400 font-sans leading-tight">
+                    <strong className="text-white font-mono uppercase tracking-wider text-[0.7rem]">Maridaje: </strong>
+                    {beer.pairings.join(', ')}.
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Details Column */}
@@ -111,30 +142,34 @@ export const BeerDetailModal = ({ beer, onClose }) => {
               </div>
             </div>
 
-            {/* Tasting Notes */}
-            {beer.tastingNotes && (
-              <div className="flex flex-col gap-1.5 bg-[#141316] border-l-2 border-[#d4af37] pl-3 py-1.5">
-                <h4 className="font-mono text-[0.7rem] uppercase text-[#d4af37] tracking-wider font-bold">
-                  Notas de Cata:
-                </h4>
-                <ul className="list-disc list-inside text-xs text-gray-300 font-sans space-y-0.5">
-                  {beer.tastingNotes.map((note, idx) => (
-                    <li key={idx}>{note}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Pairings */}
-            {beer.pairings && (
-              <div className="flex items-start gap-2 pt-0.5">
-                <Utensils className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
-                <div className="text-xs text-gray-400 font-sans leading-tight">
-                  <strong className="text-white font-mono uppercase tracking-wider text-[0.7rem]">Maridaje: </strong>
-                  {beer.pairings.join(', ')}.
+            {/* Mobile Only: Tasting Notes & Pairings placed after specs */}
+            <div className="flex md:hidden flex-col gap-3">
+              {beer.tastingNotes && (
+                <div className="flex flex-col gap-1.5 bg-[#141316] border-l-2 border-[#d4af37] p-2.5 rounded-r-sm">
+                  <h4 className="font-mono text-[0.7rem] uppercase text-[#d4af37] tracking-wider font-bold mb-0.5">
+                    Notas de Cata:
+                  </h4>
+                  <div className="flex flex-col gap-1 text-xs text-gray-300 font-sans leading-snug">
+                    {beer.tastingNotes.map((note, idx) => (
+                      <div key={idx} className="flex items-start gap-1.5">
+                        <span className="text-[#d4af37] text-[0.6rem] mt-0.5 shrink-0">■</span>
+                        <span>{note}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+
+              {beer.pairings && (
+                <div className="flex items-start gap-2 bg-[#141316] border border-[#353437]/60 p-3 rounded-sm">
+                  <Utensils className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
+                  <div className="text-xs text-gray-400 font-sans leading-tight">
+                    <strong className="text-white font-mono uppercase tracking-wider text-[0.7rem]">Maridaje: </strong>
+                    {beer.pairings.join(', ')}.
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Enhanced Footer Price & Actions Bar */}
             <div className="bg-[#18171a] border border-[#353437] p-4 rounded-sm mt-3 flex flex-col gap-3.5 shadow-inner">
@@ -143,18 +178,20 @@ export const BeerDetailModal = ({ beer, onClose }) => {
               <div className="flex items-center justify-between gap-3 border-b border-[#353437]/50 pb-3">
                 
                 {/* Price Display */}
-                <div className="flex flex-col">
-                  <span className="font-mono text-[0.65rem] text-gray-400 uppercase tracking-wider flex items-center gap-1">
-                    <Tag className="w-3 h-3 text-[#d4af37]" />
+                <div className="flex flex-col min-w-0">
+                  <span className="font-mono text-[0.65rem] text-gray-400 uppercase tracking-wider flex items-center gap-1 truncate">
+                    <Tag className="w-3 h-3 text-[#d4af37] shrink-0" />
                     {quantity > 1 ? `Subtotal (${quantity} un)` : 'Precio Unitario'}
                   </span>
-                  <div className="flex items-baseline gap-1 whitespace-nowrap">
-                    <span className="font-mono text-xs sm:text-sm font-bold text-[#d4af37]">S/</span>
-                    <span className="font-mono text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                      {totalPrice}
-                    </span>
+                  <div className="flex items-baseline gap-1.5 flex-wrap">
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-mono text-xs sm:text-sm font-bold text-[#d4af37]">S/</span>
+                      <span className="font-mono text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                        {totalPrice}
+                      </span>
+                    </div>
                     {quantity > 1 && (
-                      <span className="font-mono text-[0.65rem] text-gray-400 ml-1">
+                      <span className="font-mono text-[0.65rem] text-gray-400 whitespace-nowrap">
                         (S/ {beer.price.toFixed(2)} c/u)
                       </span>
                     )}
@@ -162,7 +199,7 @@ export const BeerDetailModal = ({ beer, onClose }) => {
                 </div>
 
                 {/* Quantity Controls */}
-                <div className="flex items-center bg-[#0d0c0f] border border-[#353437] rounded-sm p-1 shadow-md">
+                <div className="flex items-center bg-[#0d0c0f] border border-[#353437] rounded-sm p-1 shadow-md shrink-0">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={quantity <= 1}

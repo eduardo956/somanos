@@ -49,7 +49,7 @@ export const Hero = () => {
             </h1>
 
             <p className="text-gray-300 text-base sm:text-lg max-w-xl font-sans leading-relaxed">
-              Cervezas de especialidad elaboradas en pequeños lotes con ingredientes rigurosamente seleccionados: malta pura, agua de manantial, lúpulo noble y pura convicción cervecera.
+              Cervezas artesanales de autor nacidas en el valle costero de Ica. Cada botella rescata recuerdos de antaño, aventuras en la costa peruana y la pasión por crear la cerveza de especialidad perfecta.
             </p>
 
             {/* Specifications quick ribbon */}

@@ -68,9 +68,6 @@ export const Footer = () => {
               <a href="#historia" className="text-gray-400 hover:text-[#d4af37] transition-colors">
                 Nuestra Historia
               </a>
-              <a href="#packs" className="text-gray-400 hover:text-[#d4af37] transition-colors">
-                Packs & Envios
-              </a>
               <a href="#contacto" className="text-gray-400 hover:text-[#d4af37] transition-colors">
                 Contacto Directo
               </a>

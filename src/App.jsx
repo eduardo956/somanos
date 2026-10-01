@@ -9,7 +9,6 @@ import { Hero } from './components/Hero';
 import { Ticker } from './components/Ticker';
 import { BeerCatalog } from './components/BeerCatalog';
 import { StoryManifesto } from './components/StoryManifesto';
-import { PacksSection } from './components/PacksSection';
 import { ContactB2B } from './components/ContactB2B';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
@@ -37,7 +36,6 @@ export function App() {
               <Ticker />
               <BeerCatalog />
               <StoryManifesto />
-              <PacksSection />
               <ContactB2B />
             </main>
 

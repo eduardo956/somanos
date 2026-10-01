@@ -44,9 +44,6 @@ export const BeerCatalog = () => {
               Nuestra Coleccion de Autor
             </h2>
           </div>
-          <p className="text-gray-400 font-sans text-sm max-w-md">
-            Tres perfiles de autor concebidos bajo estándares estrictos de pureza y fermentación artesanal, combinados con la intensidad y nobleza del valle de Ica.
-          </p>
         </div>
 
         {/* Filter Tabs */}
@@ -123,15 +120,11 @@ export const BeerCatalog = () => {
                     {beer.subTitle} · {beer.volume}
                   </p>
 
-                  <p className="text-gray-300 text-xs font-sans leading-relaxed mb-4 line-clamp-3">
-                    {beer.description}
-                  </p>
-
                   {/* Spec Grid */}
                   <div className="grid grid-cols-2 gap-2 bg-[#18171a] border border-[#353437]/60 p-2.5 mb-4 font-mono text-[0.7rem]">
                     <div className="text-gray-400">ABV: <span className="text-white font-bold">{beer.abv}</span></div>
                     <div className="text-gray-400">IBU: <span className="text-white font-bold">{beer.ibu}</span></div>
-                    <div className="text-gray-400 col-span-2">LÚPULO: <span className="text-gray-200">{beer.hops}</span></div>
+                    <div className="text-gray-400 col-span-2">LUPULO: <span className="text-gray-200">{beer.hops}</span></div>
                   </div>
                 </div>
 

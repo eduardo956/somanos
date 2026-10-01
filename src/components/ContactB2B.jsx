@@ -27,9 +27,6 @@ export const ContactB2B = () => {
               Contactanos y Haz Tu Pedido
             </h2>
           </div>
-          <p className="text-gray-400 font-sans text-sm max-w-md">
-            Atención prioritaria y despacho directo desde nuestra planta en Ica. Coordina packs de autor, cajas de degustación y suministros para bares o eventos.
-          </p>
         </div>
 
         {/* Grid 3 cards */}
