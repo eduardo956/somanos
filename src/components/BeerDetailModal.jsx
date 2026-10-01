@@ -25,13 +25,13 @@ export const BeerDetailModal = ({ beer, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-[9000] flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4 md:p-6 overflow-y-auto animate-in fade-in duration-200"
+      className="fixed inset-0 z-[9000] flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4 md:p-6 overflow-y-auto animate-backdrop-in"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       {/* Modal Container */}
-      <div className="relative max-w-2xl lg:max-w-3xl w-full bg-gradient-to-b from-[#141317] to-[#0d0c0f] border border-[#d4af37]/60 shadow-[0_10px_40px_rgba(0,0,0,0.8)] p-5 sm:p-6 md:p-8 my-auto text-white max-h-[92vh] overflow-y-auto rounded-sm animate-in zoom-in-95 duration-200">
+      <div className="relative max-w-2xl lg:max-w-3xl w-full bg-gradient-to-b from-[#141317] to-[#0d0c0f] border border-[#d4af37]/60 shadow-[0_10px_40px_rgba(0,0,0,0.8)] p-5 sm:p-6 md:p-8 my-auto text-white max-h-[92vh] overflow-y-auto rounded-sm animate-modal-pop">
         
         {/* Top Gold Accent Bar */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#d4af37]/20 via-[#d4af37] to-[#d4af37]/20" />

@@ -8,7 +8,6 @@ export const WHATSAPP_CONFIG = {
   defaultMessages: {
     generalContact: "¡Hola Somanos! 🍺 Quisiera consultar sobre sus lotes de temporada y puntos de venta.",
     b2bInquiry: "¡Hola Somanos! 🍻 Escribo para solicitar información sobre distribución B2B y venta por mayor para mi local o evento.",
-    singleItem: (beerTitle) => `¡Hola! 👋 Deseo pedir la cerveza artesanal *${beerTitle}* (330ml). ¿Tienen stock disponible?`,
     packItem: (packTitle, price) => `¡Hola! 🍺 Deseo pedir el *${packTitle}* por S/ ${price.toFixed(2)}. ¿Me confirman disponibilidad?`,
   },
 
@@ -18,7 +17,7 @@ export const WHATSAPP_CONFIG = {
       return WHATSAPP_CONFIG.defaultMessages.generalContact;
     }
 
-    let text = `🍺 *NUEVO PEDIDO · SOMANOS CERVECERÍA*\n`;
+    let text = `¡Hola Somanos! 🍺\n\n*NUEVO PEDIDO · SOMANOS CERVECERÍA*\n`;
     text += `───────────────────────────\n`;
     cartItems.forEach(item => {
       text += `• ${item.quantity}x ${item.title} (${item.subTitle || item.volume || ''}) — S/ ${(item.price * item.quantity).toFixed(2)}\n`;
@@ -40,11 +39,6 @@ export const WHATSAPP_CONFIG = {
 
   getB2BUrl: () => {
     return `https://wa.me/${WHATSAPP_CONFIG.phoneClean}?text=${encodeURIComponent(WHATSAPP_CONFIG.defaultMessages.b2bInquiry)}`;
-  },
-
-  getItemUrl: (beerTitle) => {
-    const msg = WHATSAPP_CONFIG.defaultMessages.singleItem(beerTitle);
-    return `https://wa.me/${WHATSAPP_CONFIG.phoneClean}?text=${encodeURIComponent(msg)}`;
   },
 
   getPackUrl: (packTitle, price) => {

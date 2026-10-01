@@ -6,9 +6,9 @@ export const LegalModal = ({ isOpen, onClose, activeTab, setActiveTab }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-backdrop-in">
       <div 
-        className="relative w-full max-w-2xl bg-[#121114] border border-[#353437] shadow-2xl rounded-none flex flex-col max-h-[85vh] overflow-hidden"
+        className="relative w-full max-w-2xl bg-[#121114] border border-[#353437] shadow-2xl rounded-none flex flex-col max-h-[85vh] overflow-hidden animate-modal-pop"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Modal */}
