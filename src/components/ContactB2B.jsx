@@ -14,7 +14,7 @@ const InstagramIcon = (props) => (
 
 export const ContactB2B = () => {
   return (
-    <section className="w-full py-16 lg:py-24 bg-[#18171a] border-b border-[#353437]/40" id="contacto">
+    <section className="w-full pt-8 pb-12 lg:pt-10 lg:pb-16 bg-[#18171a] border-b border-[#353437]/40" id="contacto">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         
         {/* Section Header */}

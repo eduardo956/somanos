@@ -6,10 +6,10 @@ export const WHATSAPP_CONFIG = {
 
   // Mensajes predeterminados
   defaultMessages: {
-    generalContact: "Hola Somanos, quisiera consultar información sobre sus cervezas de autor.",
-    b2bInquiry: "Hola Somanos, quisiera coordinar distribución B2B, venta por mayor o barriles para mi local o evento.",
-    singleItem: (beerTitle) => `Hola, deseo pedir la cerveza ${beerTitle} Somanos (330ml).`,
-    packItem: (packTitle, price) => `Hola, deseo pedir el ${packTitle} por S/ ${price.toFixed(2)}.`,
+    generalContact: "¡Hola Somanos! 🍺 Quisiera consultar sobre sus lotes de temporada y puntos de venta.",
+    b2bInquiry: "¡Hola Somanos! 🍻 Escribo para solicitar información sobre distribución B2B y venta por mayor para mi local o evento.",
+    singleItem: (beerTitle) => `¡Hola! 👋 Deseo pedir la cerveza artesanal *${beerTitle}* (330ml). ¿Tienen stock disponible?`,
+    packItem: (packTitle, price) => `¡Hola! 🍺 Deseo pedir el *${packTitle}* por S/ ${price.toFixed(2)}. ¿Me confirman disponibilidad?`,
   },
 
   // Función para construir el mensaje completo del carrito de compras
@@ -18,18 +18,17 @@ export const WHATSAPP_CONFIG = {
       return WHATSAPP_CONFIG.defaultMessages.generalContact;
     }
 
-    let text = `*NUEVO PEDIDO SOMANOS CERVECERÍA*\n`;
-    text += `-----------------------------------\n`;
+    let text = `🍺 *NUEVO PEDIDO · SOMANOS CERVECERÍA*\n`;
+    text += `───────────────────────────\n`;
     cartItems.forEach(item => {
-      text += `• ${item.quantity}x ${item.title} (${item.subTitle || item.volume || ''}) - S/ ${(item.price * item.quantity).toFixed(2)}\n`;
+      text += `• ${item.quantity}x ${item.title} (${item.subTitle || item.volume || ''}) — S/ ${(item.price * item.quantity).toFixed(2)}\n`;
     });
-    text += `-----------------------------------\n`;
-    text += `*TOTAL:* S/ ${subtotal.toFixed(2)}\n`;
+    text += `───────────────────────────\n`;
+    text += `💰 *TOTAL:* S/ ${subtotal.toFixed(2)}\n`;
     if (deliveryAddress && deliveryAddress.trim() !== '') {
-      text += `*Dirección de Envío:* ${deliveryAddress.trim()}\n`;
+      text += `📍 *Dirección:* ${deliveryAddress.trim()}\n`;
     }
-    text += `*Fecha:* ${new Date().toLocaleDateString('es-PE')} - ${new Date().toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit' })}\n`;
-    text += `\n¿Me confirman disponibilidad y tiempo de entrega? ¡Gracias!`;
+    text += `\nQuedo a la espera de la confirmación para coordinar el pago (Yape/Plin/Transf) y el envío. ¡Gracias!`;
 
     return text;
   },

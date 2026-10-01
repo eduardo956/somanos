@@ -27,7 +27,7 @@ export const StoryManifesto = () => {
   ];
 
   return (
-    <section className="w-full py-16 lg:py-24 bg-[#18171a] border-y border-[#353437]/40" id="historia">
+    <section className="w-full pt-12 pb-8 lg:pt-16 lg:pb-10 bg-[#18171a] border-t border-[#353437]/40" id="historia">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           

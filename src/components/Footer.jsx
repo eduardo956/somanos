@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { companyInfo } from '../data/companyInfo';
 import { ShieldAlert } from 'lucide-react';
+import { LegalModal } from './LegalModal';
 
 const InstagramIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -11,6 +12,13 @@ const InstagramIcon = (props) => (
 );
 
 export const Footer = () => {
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('privacy');
+
+  const openLegal = (tab) => {
+    setActiveTab(tab);
+    setIsLegalOpen(true);
+  };
   return (
     <footer className="w-full bg-[#0b0b0d] border-t border-[#353437]/60">
       
@@ -108,13 +116,24 @@ export const Footer = () => {
             <a href={companyInfo.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#d4af37]">
               Instagram Oficial
             </a>
-            <a href="#" className="hover:text-white">Aviso Legal</a>
-            <a href="#" className="hover:text-white">Privacidad</a>
-            <a href="#" className="hover:text-white">Términos</a>
+            <button onClick={() => openLegal('privacy')} className="hover:text-white transition-colors cursor-pointer">
+              Privacidad
+            </button>
+            <button onClick={() => openLegal('terms')} className="hover:text-white transition-colors cursor-pointer">
+              Terminos
+            </button>
           </div>
         </div>
 
       </div>
+
+      {/* Modal de Privacidad y Términos */}
+      <LegalModal
+        isOpen={isLegalOpen}
+        onClose={() => setIsLegalOpen(false)}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
     </footer>
   );
 };

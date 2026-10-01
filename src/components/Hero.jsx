@@ -133,7 +133,7 @@ export const Hero = () => {
                       {featuredBeer.title} {featuredBeer.subTitle}
                     </span>
                     <span className="font-mono text-[0.7rem] text-gray-400 mt-0.5">
-                      Lote 012 · Guarda 28 días
+                      {featuredBeer.abv} ALC/VOL · {featuredBeer.ibu}
                     </span>
                   </div>
                   <span className="font-mono text-xl text-[#d4af37] font-bold">
