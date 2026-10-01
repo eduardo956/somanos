@@ -10,7 +10,7 @@ export const AgeModal = () => {
 
   return (
     <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 overflow-y-auto">
-      <div className="max-w-lg w-full bg-[#121114] border border-[#d4af37]/70 p-6 sm:p-10 shadow-2xl relative flex flex-col items-center text-center my-auto">
+      <div className="max-w-lg w-full bg-[#121114] border border-[#d4af37]/70 p-6 sm:p-10 shadow-2xl relative flex flex-col items-center text-center my-auto animate-modal-in">
         
         {/* Brand Icon Badge */}
         <div className="w-20 h-20 rounded-full border-2 border-[#d4af37] overflow-hidden mb-6 bg-black p-1 shadow-xl">

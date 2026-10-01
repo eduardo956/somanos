@@ -42,3 +42,7 @@ lerna-debug.log*
 *.sln
 *.sw?
 Thumbs.db
+
+# Agent skills & local tools
+.agents/
+skills-lock.json
