@@ -8,7 +8,7 @@ export const packs = [
     badge: null,
     isPopular: false,
     items: [
-      "2x Travesía (Pilsner 6.2%)",
+      "2x Travesia (Pilsner 6.2%)",
       "2x Chancluda (Red Ale 5.0%)",
       "2x 20 | 10 | 63 (Porter 6.5%)",
       "Posavasos oficiales Somanos de regalo"
@@ -25,7 +25,7 @@ export const packs = [
     badge: "Más Popular",
     isPopular: true,
     items: [
-      "4x Travesía Pilsner 330ml",
+      "4x Travesia Pilsner 330ml",
       "4x Chancluda Red Ale 330ml",
       "4x 20 | 10 | 63 Porter 330ml",
       "1x Copa Oficial Grabada Somanos",
@@ -43,7 +43,7 @@ export const packs = [
     badge: "15% OFF",
     isPopular: false,
     items: [
-      "8x Travesía Pilsner 330ml",
+      "8x Travesia Pilsner 330ml",
       "8x Chancluda Red Ale 330ml",
       "8x 20 | 10 | 63 Porter 330ml",
       "100% malta noble de guarda",

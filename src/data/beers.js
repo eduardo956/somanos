@@ -1,7 +1,7 @@
 export const beers = [
   {
     id: "travesia",
-    title: "Travesía",
+    title: "Travesia",
     subTitle: "Pilsner Artesanal",
     style: "Pilsner Clásica",
     category: "pilsner",
