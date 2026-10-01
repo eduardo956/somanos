@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Semiotic Demo';
+  src: url('/fonts/Semiotic Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tw Cen MT';
+  src: url('/fonts/Tw Cen MT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-display: 'Oswald', 'Arial Narrow', 'Trebuchet MS', sans-serif;
-  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-display: 'Semiotic Demo', 'Oswald', 'Arial Narrow', sans-serif;
+  --font-sans: 'Tw Cen MT', 'Geist', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --color-gold: #d4af37;
