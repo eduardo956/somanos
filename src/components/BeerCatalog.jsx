@@ -91,7 +91,7 @@ export const BeerCatalog = () => {
 
                 {beer.isPopular && (
                   <span className="absolute top-3 right-3 bg-[#d4af37] text-black font-mono text-[0.65rem] px-2.5 py-1 uppercase tracking-wider font-bold shadow-lg">
-                    Bestseller
+                    Más Vendido
                   </span>
                 )}
 

@@ -62,7 +62,7 @@ export const BeerDetailModal = ({ beer, onClose }) => {
             )}
             {beer.isPopular && (
               <span className="absolute top-3 right-3 bg-black/80 border border-[#d4af37]/60 text-[#d4af37] font-mono text-[0.65rem] px-2.5 py-1 uppercase tracking-wider font-bold z-20 backdrop-blur-xs flex items-center gap-1">
-                <Sparkles className="w-3 h-3" /> Bestseller
+                <Sparkles className="w-3 h-3" /> Más Vendido
               </span>
             )}
           </div>

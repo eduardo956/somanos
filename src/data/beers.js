@@ -40,7 +40,7 @@ export const beers = [
     hops: "Cascade / Fuggle",
     malt: "Caramelo Inglés, Munich & Cebada Tostada",
     temp: "7 - 9 °C",
-    tag: "Bestseller de Autor",
+    tag: "Más Vendido de Autor",
     isPopular: true,
     image: "/images/chancluda.jpg",
     description: "Aromática, profunda con destellos cobrizos. Marcadas notas a caramelo inglés, corteza de pan horneado y un cuerpo sedoso que envuelve el paladar.",

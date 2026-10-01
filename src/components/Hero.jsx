@@ -111,7 +111,7 @@ export const Hero = () => {
               <div className="bg-[#18171a] border-b border-[#353437] px-4 py-2.5 flex items-center justify-between text-xs font-mono">
                 <span className="text-[#d4af37] font-bold uppercase tracking-wider flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-ping"></span>
-                  Bestseller Destacado
+                  Más vendido
                 </span>
                 <span className="text-gray-400 uppercase">330 ML</span>
               </div>
@@ -146,7 +146,7 @@ export const Hero = () => {
                   className="w-full py-3 bg-[#d4af37] text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-md"
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  <span>Añadir Bestseller al Carrito</span>
+                  <span>Añadir Más Vendido al Carrito</span>
                 </button>
               </div>
 
