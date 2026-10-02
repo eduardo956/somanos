@@ -33,7 +33,7 @@ export const Hero = () => {
         <div className="flex items-center gap-2 mb-6">
           <span className="inline-block w-2.5 h-2.5 bg-[#d4af37]"></span>
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
-            Lote Artesanal No. 24 · Ica, Peru · Alt. 406 m.s.n.m
+            Ica, Peru · Alt. 406 m.s.n.m
           </span>
         </div>
 
@@ -86,18 +86,18 @@ export const Hero = () => {
             </div>
 
             {/* Metrics Ribbon */}
-            <div className="grid grid-cols-3 gap-4 pt-6 mt-4 bg-[#1f1e22]/70 border border-[#353437]/60 p-4">
-              <div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 bg-[#1f1e22]/70 border border-[#353437]/60 p-4 text-center">
+              <div className="flex flex-col items-center justify-center text-center">
                 <div className="font-display text-2xl sm:text-3xl text-white leading-none">100%</div>
-                <div className="font-mono text-[0.7rem] text-gray-400 uppercase mt-1">Malta y Lúpulo</div>
+                <div className="font-mono text-[0.65rem] sm:text-[0.7rem] text-gray-400 uppercase mt-1">Malta y Lúpulo</div>
               </div>
-              <div>
+              <div className="flex flex-col items-center justify-center text-center border-x border-[#353437]/50 px-1 sm:px-2">
                 <div className="font-display text-2xl sm:text-3xl text-white leading-none">0%</div>
-                <div className="font-mono text-[0.7rem] text-gray-400 uppercase mt-1">Aditivos Industriales</div>
+                <div className="font-mono text-[0.65rem] sm:text-[0.7rem] text-gray-400 uppercase mt-1">Aditivos Industriales</div>
               </div>
-              <div>
+              <div className="flex flex-col items-center justify-center text-center">
                 <div className="font-display text-2xl sm:text-3xl text-[#d4af37] leading-none">ICA</div>
-                <div className="font-mono text-[0.7rem] text-gray-400 uppercase mt-1">Valle Costero · PE</div>
+                <div className="font-mono text-[0.65rem] sm:text-[0.7rem] text-gray-400 uppercase mt-1">Valle Costero · PE</div>
               </div>
             </div>
 
