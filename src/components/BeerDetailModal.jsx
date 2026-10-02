@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
-import { X, ShoppingBag, Thermometer, Flame, Utensils, Droplet, Layers, Plus, Minus, Tag, Sparkles } from 'lucide-react';
+import { X, ShoppingBag, Thermometer, Flame, Droplet, Layers, Plus, Minus, Tag, Sparkles } from 'lucide-react';
 
 export const BeerDetailModal = ({ beer, onClose }) => {
   const { addToCart, setIsCartOpen } = useCart();
@@ -68,30 +68,20 @@ export const BeerDetailModal = ({ beer, onClose }) => {
               )}
             </div>
 
-            {/* Desktop Only: Tasting Notes & Pairings under image */}
+            {/* Desktop Only: Tasting Notes under image */}
             <div className="hidden md:flex flex-col gap-4">
               {beer.tastingNotes && (
-                <div className="flex flex-col gap-1.5 bg-[#141316] border-l-2 border-[#d4af37] p-2.5 rounded-r-sm">
-                  <h4 className="font-mono text-[0.7rem] uppercase text-[#d4af37] tracking-wider font-bold mb-0.5">
+                <div className="flex flex-col gap-2 bg-[#141316] border-l-2 border-[#d4af37] p-3 rounded-r-sm border-y border-r border-[#353437]/50">
+                  <h4 className="font-mono text-[0.7rem] uppercase text-[#d4af37] tracking-wider font-bold">
                     Notas de Cata:
                   </h4>
-                  <div className="flex flex-col gap-1 text-xs text-gray-300 font-sans leading-snug">
+                  <div className="flex flex-col gap-1.5 text-xs text-gray-300 font-sans leading-relaxed">
                     {beer.tastingNotes.map((note, idx) => (
-                      <div key={idx} className="flex items-start gap-1.5">
+                      <div key={idx} className="flex items-start gap-2">
                         <span className="text-[#d4af37] text-[0.6rem] mt-0.5 shrink-0">■</span>
                         <span>{note}</span>
                       </div>
                     ))}
-                  </div>
-                </div>
-              )}
-
-              {beer.pairings && (
-                <div className="flex items-start gap-2 bg-[#141316] border border-[#353437]/60 p-3 rounded-sm">
-                  <Utensils className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
-                  <div className="text-xs text-gray-400 font-sans leading-tight">
-                    <strong className="text-white font-mono uppercase tracking-wider text-[0.7rem]">Maridaje: </strong>
-                    {beer.pairings.join(', ')}.
                   </div>
                 </div>
               )}
@@ -142,7 +132,7 @@ export const BeerDetailModal = ({ beer, onClose }) => {
               </div>
             </div>
 
-            {/* Mobile Only: Tasting Notes & Pairings placed after specs */}
+            {/* Mobile Only: Tasting Notes placed after specs */}
             <div className="flex md:hidden flex-col gap-3">
               {beer.tastingNotes && (
                 <div className="flex flex-col gap-1.5 bg-[#141316] border-l-2 border-[#d4af37] p-2.5 rounded-r-sm">
@@ -156,16 +146,6 @@ export const BeerDetailModal = ({ beer, onClose }) => {
                         <span>{note}</span>
                       </div>
                     ))}
-                  </div>
-                </div>
-              )}
-
-              {beer.pairings && (
-                <div className="flex items-start gap-2 bg-[#141316] border border-[#353437]/60 p-3 rounded-sm">
-                  <Utensils className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
-                  <div className="text-xs text-gray-400 font-sans leading-tight">
-                    <strong className="text-white font-mono uppercase tracking-wider text-[0.7rem]">Maridaje: </strong>
-                    {beer.pairings.join(', ')}.
                   </div>
                 </div>
               )}
