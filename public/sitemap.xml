@@ -3,12 +3,24 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://somanos.com.pe/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://somanos.com.pe/images/logo.png</image:loc>
       <image:title>Somanos Cerveza Artesanal Ica Perú</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://somanos.com.pe/images/Travesia.jpg</image:loc>
+      <image:title>Somanos Travesía Pilsner - Cerveza Artesanal Ica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://somanos.com.pe/images/Chancluda.jpg</image:loc>
+      <image:title>Somanos Chancluda Red Ale - Cerveza Artesanal Ica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://somanos.com.pe/images/porter.jpg</image:loc>
+      <image:title>Somanos 20 10 63 Porter - Cerveza Artesanal Ica</image:title>
     </image:image>
   </url>
 </urlset>
