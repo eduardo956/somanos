@@ -16,7 +16,7 @@ export const AgeModal = () => {
         <div className="w-20 h-20 rounded-full border-2 border-[#d4af37] overflow-hidden mb-6 bg-black p-1 shadow-xl">
           <img
             src="/images/logo.png"
-            alt="Somanos Logo"
+            alt="Logo oficial de Cervecería Artesanal Somanos - Ica, Perú"
             className="w-full h-full object-cover"
           />
         </div>

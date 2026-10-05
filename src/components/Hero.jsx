@@ -125,7 +125,7 @@ export const Hero = () => {
               >
                 <img
                   src={featuredBeer.image}
-                  alt={featuredBeer.title}
+                  alt={`Botella destacada Cerveza Artesanal Somanos ${featuredBeer.title} - ${featuredBeer.style}`}
                   className="w-full h-full object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
               </div>

@@ -39,7 +39,7 @@ export const Footer = () => {
               <div className="w-16 h-16 rounded-full overflow-hidden border border-[#d4af37]/50 flex items-center justify-center bg-black shadow-lg shrink-0">
                 <img
                   src={companyInfo.logoUrl}
-                  alt="Somanos Logo"
+                  alt="Logo oficial de Cervecería Artesanal Somanos - Ica, Perú"
                   className="h-full w-full object-cover"
                 />
               </div>

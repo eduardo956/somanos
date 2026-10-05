@@ -22,7 +22,7 @@ export const Navbar = () => {
           <div className="relative flex items-center justify-center w-14 h-14 rounded-full overflow-hidden border border-[#d4af37]/50 group-hover:border-[#d4af37] bg-black transition-colors shadow-md shrink-0">
             <img
               src={companyInfo.logoUrl}
-              alt={companyInfo.name}
+              alt="Logo principal Cervecería Artesanal Somanos - Ica"
               className="h-full w-full object-cover"
             />
           </div>
@@ -88,15 +88,15 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Floating Overlay */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#121114] border-b border-[#353437] px-6 py-6 flex flex-col gap-4">
+        <div className="xl:hidden absolute top-full left-0 right-0 z-50 bg-[#121114]/98 backdrop-blur-xl border-b border-[#353437] px-6 py-6 flex flex-col gap-4 shadow-2xl animate-in slide-in-from-top-2 duration-200">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="font-mono text-base uppercase tracking-wider text-gray-200 hover:text-[#d4af37] py-2 border-b border-[#1f1e22]"
+              className="font-mono text-base uppercase tracking-wider text-gray-200 hover:text-[#d4af37] py-2 border-b border-[#1f1e22] transition-colors"
             >
               {link.name}
             </a>
@@ -104,7 +104,7 @@ export const Navbar = () => {
           <a
             href="#packs"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-2 w-full py-3 bg-[#d4af37] text-black font-mono text-xs font-bold uppercase tracking-widest text-center"
+            className="mt-2 w-full py-3.5 bg-[#d4af37] text-black font-mono text-xs font-bold uppercase tracking-widest text-center hover:bg-white transition-colors shadow-md"
           >
             Comprar Online
           </a>

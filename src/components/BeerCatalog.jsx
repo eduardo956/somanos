@@ -77,7 +77,7 @@ export const BeerCatalog = () => {
               >
                 <img
                   src={beer.image}
-                  alt={beer.title}
+                  alt={`Botella de Cerveza Artesanal Somanos ${beer.title} - Estilo ${beer.style} ${beer.volume}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
 

@@ -84,7 +84,7 @@ export const CartDrawer = () => {
                   <div className="w-16 h-16 bg-[#0b0b0d] border border-[#353437] flex items-center justify-center shrink-0 p-1">
                     <img
                       src={item.image}
-                      alt={item.title}
+                      alt={`Cerveza ${item.title} agregada al carrito`}
                       className="w-full h-full object-contain"
                     />
                   </div>
