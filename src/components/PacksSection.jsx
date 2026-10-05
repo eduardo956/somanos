@@ -16,7 +16,7 @@ export const PacksSection = () => {
       title: pack.title,
       subTitle: pack.categoryTag,
       price: pack.price,
-      image: pack.id === 'pack-12x' ? "/images/Chancluda.jpg" : "/images/Travesia.jpg",
+      image: pack.id === 'pack-12x' ? "/images/chancluda.jpg" : "/images/travesia.jpg",
       volume: "Pack Especial"
     };
 
