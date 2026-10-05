@@ -16,7 +16,7 @@ export const PacksSection = () => {
       title: pack.title,
       subTitle: pack.categoryTag,
       price: pack.price,
-      image: pack.id === 'pack-12x' ? "/images/chancluda.jpg" : "/images/travesia.jpg",
+      image: "/images/chancluda.jpg",
       volume: "Pack Especial"
     };
 
@@ -28,7 +28,7 @@ export const PacksSection = () => {
   return (
     <section className="w-full py-16 lg:py-24 bg-[#121114] border-b border-[#353437]/40" id="packs">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
@@ -49,11 +49,10 @@ export const PacksSection = () => {
           {packs.map((pack) => (
             <div
               key={pack.id}
-              className={`p-6 md:p-8 flex flex-col justify-between relative transition-all duration-300 shadow-xl ${
-                pack.isPopular
-                  ? 'bg-[#28272b] border-2 border-[#d4af37]'
-                  : 'bg-[#0b0b0d] border border-[#353437]/60 hover:border-[#d4af37]/50'
-              }`}
+              className={`p-6 md:p-8 flex flex-col justify-between relative transition-all duration-300 shadow-xl ${pack.isPopular
+                ? 'bg-[#28272b] border-2 border-[#d4af37]'
+                : 'bg-[#0b0b0d] border border-[#353437]/60 hover:border-[#d4af37]/50'
+                }`}
             >
               {/* Badge */}
               {pack.badge && (
@@ -97,11 +96,10 @@ export const PacksSection = () => {
               <div className="flex flex-col gap-2">
                 <button
                   onClick={() => handleAddPackToCart(pack)}
-                  className={`w-full py-3 font-mono text-xs font-bold uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 ${
-                    pack.isPopular
-                      ? 'bg-[#d4af37] text-black hover:bg-white'
-                      : 'bg-[#1f1e22] text-white border border-[#353437] hover:bg-[#d4af37] hover:text-black'
-                  }`}
+                  className={`w-full py-3 font-mono text-xs font-bold uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 ${pack.isPopular
+                    ? 'bg-[#d4af37] text-black hover:bg-white'
+                    : 'bg-[#1f1e22] text-white border border-[#353437] hover:bg-[#d4af37] hover:text-black'
+                    }`}
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Añadir al Carrito</span>
