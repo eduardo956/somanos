@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
 import { beers } from '../data/beers';
+import { BeerDetailModal } from './BeerDetailModal';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 
 export const Hero = () => {
   const { addToCart, setIsCartOpen } = useCart();
   const { addToast } = useToast();
+  const [selectedBeerModal, setSelectedBeerModal] = useState(null);
 
-  const featuredBeer = beers.find(b => b.id === 'chancluda') || beers[0];
+  const featuredBeer = beers.find(b => b.id === 'travesia') || beers[0];
 
   const handleAddFeatured = () => {
     addToCart(featuredBeer, 1);
@@ -117,7 +119,10 @@ export const Hero = () => {
               </div>
 
               {/* Product Bottle Image */}
-              <div className="relative w-full aspect-square bg-[#0b0b0d] overflow-hidden flex items-center justify-center">
+              <div 
+                onClick={() => setSelectedBeerModal(featuredBeer)}
+                className="relative w-full aspect-square bg-[#0b0b0d] overflow-hidden flex items-center justify-center cursor-pointer"
+              >
                 <img
                   src={featuredBeer.image}
                   alt={featuredBeer.title}
@@ -128,9 +133,12 @@ export const Hero = () => {
               {/* Product Info & Action Card Footer */}
               <div className="p-4 bg-[#121114] border-t border-[#353437] flex flex-col gap-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex flex-col text-left">
-                    <span className="font-mono text-sm text-white uppercase font-bold tracking-wider">
-                      {featuredBeer.title} {featuredBeer.subTitle}
+                  <div 
+                    onClick={() => setSelectedBeerModal(featuredBeer)}
+                    className="flex flex-col text-left cursor-pointer hover:opacity-80 transition-opacity"
+                  >
+                    <span className="font-bottle text-base text-white uppercase font-bold tracking-wider">
+                      {featuredBeer.title} · {featuredBeer.subTitle}
                     </span>
                     <span className="font-mono text-[0.7rem] text-gray-400 mt-0.5">
                       {featuredBeer.abv} ALC/VOL · {featuredBeer.ibu}
@@ -143,7 +151,7 @@ export const Hero = () => {
 
                 <button
                   onClick={handleAddFeatured}
-                  className="w-full py-3 bg-[#d4af37] text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-md"
+                  className="w-full py-3 bg-[#d4af37] text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Añadir Más Vendido al Carrito</span>
@@ -155,6 +163,14 @@ export const Hero = () => {
 
         </div>
       </div>
+
+      {/* Beer Details Modal */}
+      {selectedBeerModal && (
+        <BeerDetailModal
+          beer={selectedBeerModal}
+          onClose={() => setSelectedBeerModal(null)}
+        />
+      )}
     </section>
   );
 };

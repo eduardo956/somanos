@@ -107,7 +107,7 @@ export const BeerCatalog = () => {
                   <div className="flex items-baseline justify-between mb-1">
                     <h3
                       onClick={() => setSelectedBeerModal(beer)}
-                      className="font-display text-2xl text-white uppercase tracking-wide hover:text-[#d4af37] cursor-pointer transition-colors"
+                      className="font-bottle text-2xl text-white uppercase tracking-wide hover:text-[#d4af37] cursor-pointer transition-colors"
                     >
                       {beer.title}
                     </h3>
@@ -116,16 +116,9 @@ export const BeerCatalog = () => {
                     </span>
                   </div>
 
-                  <p className="font-mono text-xs text-gray-400 uppercase mb-3">
+                  <p className="font-mono text-xs text-gray-400 uppercase mb-6">
                     {beer.subTitle} · {beer.volume}
                   </p>
-
-                  {/* Spec Grid */}
-                  <div className="grid grid-cols-2 gap-2 bg-[#18171a] border border-[#353437]/60 p-2.5 mb-4 font-mono text-[0.7rem]">
-                    <div className="text-gray-400">ABV: <span className="text-white font-bold">{beer.abv}</span></div>
-                    <div className="text-gray-400">IBU: <span className="text-white font-bold">{beer.ibu}</span></div>
-                    <div className="text-gray-400 col-span-2">LUPULO: <span className="text-gray-200">{beer.hops}</span></div>
-                  </div>
                 </div>
 
                 {/* Action Buttons */}

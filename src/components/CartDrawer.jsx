@@ -91,7 +91,7 @@ export const CartDrawer = () => {
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-display text-lg uppercase text-white truncate">
+                    <h4 className="font-bottle text-lg uppercase text-white truncate">
                       {item.title}
                     </h4>
                     <span className="font-mono text-[0.7rem] text-gray-400 block truncate">

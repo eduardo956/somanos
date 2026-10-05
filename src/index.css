@@ -20,6 +20,7 @@
   --font-display: 'Semiotic Demo', 'Oswald', 'Arial Narrow', sans-serif;
   --font-sans: 'Tw Cen MT', 'Geist', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-bottle: Georgia, 'Times New Roman', serif;
 
   --color-gold: #d4af37;
   --color-gold-light: #f1d479;
@@ -47,6 +48,10 @@
 
   h1, h2, h3, .font-display {
     font-family: var(--font-display);
+  }
+
+  .font-bottle {
+    font-family: var(--font-bottle);
   }
 
   .font-mono-tag {

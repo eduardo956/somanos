@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
-import { X, ShoppingBag, Thermometer, Flame, Droplet, Layers, Plus, Minus, Tag, Sparkles } from 'lucide-react';
+import { X, ShoppingBag, Flame, Droplet, Layers, Plus, Minus, Tag, Sparkles } from 'lucide-react';
 
 export const BeerDetailModal = ({ beer, onClose }) => {
   const { addToCart, setIsCartOpen } = useCart();
@@ -100,7 +100,7 @@ export const BeerDetailModal = ({ beer, onClose }) => {
                   {beer.volume}
                 </span>
               </div>
-              <h2 className="font-display text-3xl sm:text-4xl uppercase tracking-wide text-white leading-tight">
+              <h2 className="font-bottle text-3xl sm:text-4xl uppercase tracking-wide text-white leading-tight">
                 {beer.title}
               </h2>
               <p className="font-mono text-xs text-gray-400 uppercase mt-0.5 tracking-wider">
@@ -124,12 +124,13 @@ export const BeerDetailModal = ({ beer, onClose }) => {
               </div>
               <div className="flex items-center gap-2 text-gray-300 col-span-2 truncate">
                 <Droplet className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
-                <span>Lúpulo: <strong className="text-white font-medium truncate">{beer.hops}</strong></span>
+                <span>Ingredientes: <strong className="text-white font-medium truncate">{beer.ingredients || "Malta, Agua, Lúpulo, Levadura"}</strong></span>
               </div>
-              <div className="flex items-center gap-2 text-gray-300 col-span-2 truncate">
-                <Thermometer className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
-                <span>Servido Ideal: <strong className="text-white font-medium">{beer.temp}</strong></span>
-              </div>
+              {beer.sanitaryRegister && (
+                <div className="flex items-center gap-2 text-gray-400 col-span-2 text-[0.65rem]">
+                  <span>Reg. Sanitario: <strong className="text-gray-300 font-normal">{beer.sanitaryRegister}</strong></span>
+                </div>
+              )}
             </div>
 
             {/* Mobile Only: Tasting Notes placed after specs */}
