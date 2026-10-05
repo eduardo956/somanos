@@ -30,7 +30,7 @@ export const Hero = () => {
       ></div>
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
-        
+
         {/* Monospace Overline Tag */}
         <div className="flex items-center gap-2 mb-6">
           <span className="inline-block w-2.5 h-2.5 bg-[#d4af37]"></span>
@@ -40,10 +40,10 @@ export const Hero = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Text Column */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none">
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-8xl text-white uppercase tracking-tight leading-none">
               MAESTRIA ARTESANAL <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f1d479] via-white to-gray-400">
                 FORJADA EN ICA
@@ -108,7 +108,7 @@ export const Hero = () => {
           {/* Visual Hero Showcase */}
           <div className="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
             <div className="relative w-full max-w-md mx-auto bg-[#0b0b0d] border border-[#353437] shadow-2xl flex flex-col group overflow-hidden">
-              
+
               {/* Product Bottle Showcase Header Tag */}
               <div className="bg-[#18171a] border-b border-[#353437] px-4 py-2.5 flex items-center justify-between text-xs font-mono">
                 <span className="text-[#d4af37] font-bold uppercase tracking-wider flex items-center gap-1.5">
@@ -119,7 +119,7 @@ export const Hero = () => {
               </div>
 
               {/* Product Bottle Image */}
-              <div 
+              <div
                 onClick={() => setSelectedBeerModal(featuredBeer)}
                 className="relative w-full aspect-square bg-[#0b0b0d] overflow-hidden flex items-center justify-center cursor-pointer"
               >
@@ -133,7 +133,7 @@ export const Hero = () => {
               {/* Product Info & Action Card Footer */}
               <div className="p-4 bg-[#121114] border-t border-[#353437] flex flex-col gap-3">
                 <div className="flex items-center justify-between">
-                  <div 
+                  <div
                     onClick={() => setSelectedBeerModal(featuredBeer)}
                     className="flex flex-col text-left cursor-pointer hover:opacity-80 transition-opacity"
                   >
