@@ -33,7 +33,7 @@ export const BeerCatalog = () => {
   return (
     <section className="w-full py-16 lg:py-24 bg-[#121114]" id="cervezas">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div className="flex flex-col">
@@ -41,7 +41,7 @@ export const BeerCatalog = () => {
               Catalogo de Temporada
             </span>
             <h2 className="font-display text-3xl md:text-5xl text-white uppercase tracking-wide mt-1">
-              Nuestra Coleccion de Autor
+              Nuestra Coleccion
             </h2>
           </div>
         </div>
@@ -52,11 +52,10 @@ export const BeerCatalog = () => {
             <button
               key={cat.id}
               onClick={() => setActiveFilter(cat.id)}
-              className={`px-4 py-2 font-mono text-xs uppercase tracking-wider transition-all duration-150 ${
-                activeFilter === cat.id
+              className={`px-4 py-2 font-mono text-xs uppercase tracking-wider transition-all duration-150 ${activeFilter === cat.id
                   ? 'bg-[#d4af37] text-black font-bold border border-[#d4af37]'
                   : 'bg-[#18171a] text-gray-400 hover:text-white border border-[#353437]'
-              }`}
+                }`}
             >
               {cat.label}
             </button>
