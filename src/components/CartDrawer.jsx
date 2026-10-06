@@ -4,6 +4,7 @@ import { useToast } from '../context/ToastContext';
 import { validateCoupon } from '../config/couponsConfig';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { X, Trash2, Plus, Minus, ShoppingBag, MapPin, Truck, Ticket, Tag } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 export const CartDrawer = () => {
   const {
@@ -42,7 +43,42 @@ export const CartDrawer = () => {
 
     if (result.valid) {
       setAppliedCoupon(result.coupon);
-      addToast(result.message, 'success');
+      addToast(result.message, 'coupon');
+      try {
+        const isMobile = window.innerWidth < 640;
+        const originX = isMobile ? 0.5 : 0.82;
+
+        confetti({
+          particleCount: 120,
+          spread: 70,
+          startVelocity: 45,
+          angle: 90,
+          origin: { x: originX, y: 0.72 },
+          zIndex: 10010,
+          colors: ['#d4af37', '#ffffff', '#10b981', '#f59e0b', '#fbbf24']
+        });
+
+        setTimeout(() => {
+          confetti({
+            particleCount: 50,
+            angle: 60,
+            spread: 55,
+            origin: { x: originX - 0.08, y: 0.75 },
+            zIndex: 10010,
+            colors: ['#d4af37', '#ffffff', '#f59e0b']
+          });
+          confetti({
+            particleCount: 50,
+            angle: 120,
+            spread: 55,
+            origin: { x: originX + 0.08, y: 0.75 },
+            zIndex: 10010,
+            colors: ['#d4af37', '#ffffff', '#10b981']
+          });
+        }, 150);
+      } catch (err) {
+        console.error("Confetti error", err);
+      }
     } else {
       setAppliedCoupon(null);
       addToast(result.message, 'error');
