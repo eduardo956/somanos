@@ -16,8 +16,8 @@ export const StoryManifesto = () => {
     },
     {
       icon: ShieldCheck,
-      title: "Trazabilidad Total",
-      desc: "Cada botella porta su número de lote y fecha de embotellado."
+      title: "Registro Sanitario",
+      desc: "Lotes certificados con Registro Sanitario DIGESA oficial en cada variedad."
     },
     {
       icon: MapPin,
@@ -83,31 +83,29 @@ export const StoryManifesto = () => {
               />
             </div>
 
-            {/* Metric Cards */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Info Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-6 bg-[#0b0b0d] border border-[#353437]/60 flex flex-col justify-between">
-                <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
-                  Ediciones en Micro-Lotes
+                <span className="font-mono text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
+                  Esencia Iqueña
                 </span>
                 <div className="my-3">
-                  <span className="font-display text-4xl lg:text-5xl text-white font-bold">500</span>
-                  <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">LITROS</span>
+                  <span className="font-display text-3xl sm:text-4xl text-white font-bold tracking-tight">DE ORIGEN</span>
                 </div>
-                <p className="text-xs text-gray-400 font-sans">
-                  Lotes pequeños y exclusivos para garantizar la máxima frescura y sabor en cada botella.
+                <p className="text-xs text-gray-400 font-sans leading-relaxed">
+                  Elaborada en el corazón del desierto. Una producción artesanal e íntima que captura la intensidad y el espíritu del sur en cada botella.
                 </p>
               </div>
 
               <div className="p-6 bg-[#0b0b0d] border border-[#353437]/60 flex flex-col justify-between">
-                <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
-                  Reposo y Maduración
+                <span className="font-mono text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
+                  Maduración Perfecta
                 </span>
                 <div className="my-3">
-                  <span className="font-display text-4xl lg:text-5xl text-white font-bold">28+</span>
-                  <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">DÍAS</span>
+                  <span className="font-display text-3xl sm:text-4xl text-white font-bold tracking-tight">A SU RITMO</span>
                 </div>
-                <p className="text-xs text-gray-400 font-sans">
-                  Sin prisa comercial; respetamos el tiempo natural de fermentación y maduración en frío.
+                <p className="text-xs text-gray-400 font-sans leading-relaxed">
+                  El clima de Ica inspira nuestro carácter, pero es el reposo meticuloso y sin prisas el que sella el sabor de una verdadera Somanos.
                 </p>
               </div>
             </div>

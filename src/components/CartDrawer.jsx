@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
+import { validateCoupon } from '../config/couponsConfig';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
-import { X, Trash2, Plus, Minus, ShoppingBag, MapPin, Truck } from 'lucide-react';
+import { X, Trash2, Plus, Minus, ShoppingBag, MapPin, Truck, Ticket, Tag } from 'lucide-react';
 
 export const CartDrawer = () => {
   const {
@@ -14,13 +16,51 @@ export const CartDrawer = () => {
     subtotal,
     generateWhatsAppUrl
   } = useCart();
+  const { addToast } = useToast();
 
   const [address, setAddress] = useState('');
+  const [couponInput, setCouponInput] = useState('');
+  const [appliedCoupon, setAppliedCoupon] = useState(null);
 
   if (!isCartOpen) return null;
 
+  // Cálculo del descuento
+  let discountAmount = 0;
+  if (appliedCoupon) {
+    if (appliedCoupon.type === 'percentage') {
+      discountAmount = (subtotal * appliedCoupon.discountValue) / 100;
+    } else if (appliedCoupon.type === 'fixed') {
+      discountAmount = Math.min(subtotal, appliedCoupon.discountValue);
+    }
+  }
+
+  const finalTotal = Math.max(0, subtotal - discountAmount);
+
+  const handleApplyCoupon = (e) => {
+    e?.preventDefault();
+    const result = validateCoupon(couponInput);
+
+    if (result.valid) {
+      setAppliedCoupon(result.coupon);
+      addToast(result.message, 'success');
+    } else {
+      setAppliedCoupon(null);
+      addToast(result.message, 'error');
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    setAppliedCoupon(null);
+    setCouponInput('');
+  };
+
   const handleSendOrder = () => {
-    const url = generateWhatsAppUrl(address);
+    const url = generateWhatsAppUrl({
+      deliveryAddress: address,
+      appliedCoupon,
+      discountAmount,
+      total: finalTotal
+    });
     window.open(url, '_blank');
   };
 
@@ -34,7 +74,7 @@ export const CartDrawer = () => {
 
       {/* Drawer Panel */}
       <div className="relative w-full max-w-md bg-[#121114] border-l border-[#353437] h-full shadow-2xl flex flex-col justify-between z-10 text-white animate-in slide-in-from-right duration-300">
-        
+
         {/* Header */}
         <div className="p-6 border-b border-[#353437] flex items-center justify-between bg-[#0b0b0d]">
           <div className="flex items-center gap-3">
@@ -138,7 +178,7 @@ export const CartDrawer = () => {
         {/* Footer Checkout */}
         {cartItems.length > 0 && (
           <div className="p-6 border-t border-[#353437] bg-[#0b0b0d] flex flex-col gap-4">
-            
+
             {/* Delivery address input */}
             <div className="flex flex-col gap-1.5">
               <label className="font-mono text-[0.7rem] uppercase text-gray-400 flex items-center gap-1.5">
@@ -149,24 +189,71 @@ export const CartDrawer = () => {
                 type="text"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                placeholder="Ej. Urb. San José, Ica / Miraflores, Lima"
+                placeholder="Ej. Urb. San José F-14, Ica"
                 className="w-full bg-[#18171a] border border-[#353437] px-3 py-2 text-xs text-white placeholder-gray-500 font-sans focus:outline-none focus:border-[#d4af37]"
               />
             </div>
 
-            {/* Subtotal */}
-            <div className="flex items-center justify-between pt-2 border-t border-[#353437]/50">
-              <span className="font-mono text-xs text-gray-400 uppercase">Subtotal del Pedido</span>
-              <span className="font-mono text-xl font-bold text-[#d4af37]">
-                S/ {subtotal.toFixed(2)}
-              </span>
+            {/* Coupon Code Section */}
+            <div className="flex flex-col gap-2 pt-1">
+              <label className="font-mono text-[0.7rem] uppercase text-gray-400 flex items-center gap-1.5">
+                <Ticket className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span>Cupón de Descuento</span>
+              </label>
+
+              {!appliedCoupon ? (
+                <form onSubmit={handleApplyCoupon} className="flex gap-2">
+                  <input
+                    type="text"
+                    value={couponInput}
+                    onChange={(e) => setCouponInput(e.target.value)}
+                    className="flex-1 bg-[#18171a] border border-[#353437] px-3 py-2 text-xs text-white uppercase placeholder-gray-500 font-mono focus:outline-none focus:border-[#d4af37]"
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-[#d4af37] text-black font-mono text-xs font-bold uppercase hover:bg-white transition-colors"
+                  >
+                    Aplicar
+                  </button>
+                </form>
+              ) : (
+                <div className="flex items-center justify-between p-2.5 bg-emerald-950/40 border border-emerald-500/50 text-emerald-300 font-mono text-xs">
+                  <div className="flex items-center gap-2">
+                    <Tag className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Cupón: <strong>{appliedCoupon.code}</strong></span>
+                  </div>
+                  <button
+                    onClick={handleRemoveCoupon}
+                    className="text-gray-400 hover:text-red-400 text-[0.7rem] underline uppercase ml-2"
+                  >
+                    Quitar
+                  </button>
+                </div>
+              )}
             </div>
 
-            {/* Free shipping notice */}
-            <div className="flex items-center gap-2 p-2 bg-[#18171a] border border-emerald-500/30 text-emerald-400 font-mono text-[0.7rem]">
-              <Truck className="w-4 h-4 shrink-0" />
-              <span>Despacho 24h directo desde planta de fermentación en Ica</span>
+            {/* Totals Breakdown */}
+            <div className="flex flex-col gap-1.5 pt-2 border-t border-[#353437]/60 font-mono">
+              <div className="flex items-center justify-between text-xs text-gray-400">
+                <span>Subtotal</span>
+                <span>S/ {subtotal.toFixed(2)}</span>
+              </div>
+
+              {discountAmount > 0 && (
+                <div className="flex items-center justify-between text-xs text-emerald-400 font-semibold">
+                  <span>Descuento ({appliedCoupon?.code})</span>
+                  <span>- S/ {discountAmount.toFixed(2)}</span>
+                </div>
+              )}
+
+              <div className="flex items-center justify-between pt-1 border-t border-[#353437]/40 text-base">
+                <span className="text-white uppercase font-bold">Total a Pagar</span>
+                <span className="text-xl font-bold text-[#d4af37]">
+                  S/ {finalTotal.toFixed(2)}
+                </span>
+              </div>
             </div>
+
 
             {/* WhatsApp Checkout Button */}
             <button
@@ -178,7 +265,10 @@ export const CartDrawer = () => {
             </button>
 
             <button
-              onClick={clearCart}
+              onClick={() => {
+                clearCart();
+                handleRemoveCoupon();
+              }}
               className="text-center font-mono text-[0.65rem] text-gray-500 hover:text-gray-300 uppercase tracking-wider underline"
             >
               Vaciar carrito

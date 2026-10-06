@@ -59,8 +59,20 @@ export const CartProvider = ({ children }) => {
 
   const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
-  const generateWhatsAppUrl = (deliveryAddress = '') => {
-    return WHATSAPP_CONFIG.getCartUrl({ cartItems, subtotal, deliveryAddress });
+  const generateWhatsAppUrl = (options = {}) => {
+    const deliveryAddress = typeof options === 'string' ? options : (options.deliveryAddress || '');
+    const appliedCoupon = options.appliedCoupon || null;
+    const discountAmount = options.discountAmount || 0;
+    const total = options.total || Math.max(0, subtotal - discountAmount);
+
+    return WHATSAPP_CONFIG.getCartUrl({
+      cartItems,
+      subtotal,
+      discountAmount,
+      appliedCoupon,
+      total,
+      deliveryAddress
+    });
   };
 
   return (

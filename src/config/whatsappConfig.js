@@ -12,7 +12,7 @@ export const WHATSAPP_CONFIG = {
   },
 
   // Función para construir el mensaje completo del carrito de compras
-  buildCartMessage: ({ cartItems = [], subtotal = 0, deliveryAddress = '' }) => {
+  buildCartMessage: ({ cartItems = [], subtotal = 0, discountAmount = 0, appliedCoupon = null, total = 0, deliveryAddress = '' }) => {
     if (cartItems.length === 0) {
       return WHATSAPP_CONFIG.defaultMessages.generalContact;
     }
@@ -23,7 +23,16 @@ export const WHATSAPP_CONFIG = {
       text += `• ${item.quantity}x ${item.title} (${item.subTitle || item.volume || ''}) — S/ ${(item.price * item.quantity).toFixed(2)}\n`;
     });
     text += `───────────────────────────\n`;
-    text += `💰 *TOTAL:* S/ ${subtotal.toFixed(2)}\n`;
+    text += `💵 *Subtotal:* S/ ${subtotal.toFixed(2)}\n`;
+
+    if (appliedCoupon && discountAmount > 0) {
+      text += `🎟️ *Cupón Aplicado:* ${appliedCoupon.code}\n`;
+      text += `🎁 *Descuento:* -S/ ${discountAmount.toFixed(2)}\n`;
+    }
+
+    const finalTotal = total > 0 ? total : Math.max(0, subtotal - discountAmount);
+    text += `💰 *TOTAL A PAGAR:* S/ ${finalTotal.toFixed(2)}\n`;
+
     if (deliveryAddress && deliveryAddress.trim() !== '') {
       text += `📍 *Dirección:* ${deliveryAddress.trim()}\n`;
     }
@@ -46,8 +55,8 @@ export const WHATSAPP_CONFIG = {
     return `https://wa.me/${WHATSAPP_CONFIG.phoneClean}?text=${encodeURIComponent(msg)}`;
   },
 
-  getCartUrl: ({ cartItems, subtotal, deliveryAddress }) => {
-    const text = WHATSAPP_CONFIG.buildCartMessage({ cartItems, subtotal, deliveryAddress });
+  getCartUrl: ({ cartItems, subtotal, discountAmount = 0, appliedCoupon = null, total = 0, deliveryAddress = '' }) => {
+    const text = WHATSAPP_CONFIG.buildCartMessage({ cartItems, subtotal, discountAmount, appliedCoupon, total, deliveryAddress });
     return `https://wa.me/${WHATSAPP_CONFIG.phoneClean}?text=${encodeURIComponent(text)}`;
   }
 };
