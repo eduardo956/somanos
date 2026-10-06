@@ -43,12 +43,9 @@ export const ContactB2B = () => {
                   Respuesta &lt; 5 min
                 </span>
               </div>
-              <h3 className="font-display text-2xl text-white uppercase tracking-wide mb-1">
+              <h3 className="font-display text-2xl text-white uppercase tracking-wide mb-3">
                 Linea Directa WhatsApp
               </h3>
-              <div className="font-mono text-base text-[#d4af37] font-bold mb-3">
-                {WHATSAPP_CONFIG.phoneNumber}
-              </div>
               <p className="text-gray-400 font-sans text-xs mb-6 leading-relaxed">
                 Pide tus six-packs o cajas de colección al instante con delivery local en Ica y envíos directos de bodega.
               </p>
