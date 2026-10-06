@@ -116,7 +116,7 @@ export const BeerDetailModal = ({ beer, onClose }) => {
             <div className="grid grid-cols-2 gap-2.5 bg-[#171619] border border-[#353437] p-3 font-mono text-[0.7rem] sm:text-xs rounded-sm">
               <div className="flex items-center gap-2 text-gray-300 truncate">
                 <Flame className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
-                <span>ABV: <strong className="text-white font-bold">{beer.abv}</strong></span>
+                <span>ALC/VOL: <strong className="text-white font-bold">{beer.abv}</strong></span>
               </div>
               <div className="flex items-center gap-2 text-gray-300 truncate">
                 <Layers className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
