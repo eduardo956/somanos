@@ -49,7 +49,7 @@ export const ToastContainer = () => {
               ) : (
                 <Info className={`w-6 h-6 shrink-0 ${iconColor}`} />
               )}
-              <span className={`text-xs sm:text-sm tracking-wide leading-snug ${isCoupon ? 'font-bold font-sans' : 'font-semibold'}`}>
+              <span className={`text-sm sm:text-base tracking-wide leading-snug ${isCoupon ? 'font-bold font-sans' : 'font-semibold'}`}>
                 {toast.message}
               </span>
             </div>
