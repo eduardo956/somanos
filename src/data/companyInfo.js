@@ -13,15 +13,15 @@ export const companyInfo = {
   logoUrl: "/images/logo.png",
   brewmaster: "Leonardo Velarde (LVJ)",
   stats: [
-    { value: "100%", label: "Malta y Lúpulo Selecto" },
+    { value: "100%", label: "Maltas y Lúpulo Selecto" },
     { value: "0%", label: "Aditivos Industriales" },
-    { value: "500 L", label: "Capacidad por Lote" },
+    { value: "500 L", label: "Edición por Micro-lote" },
     { value: "28+ Días", label: "Maduración en Frío" }
   ],
   manifesto: {
-    title: "Nacidos entre dunas y valles de Ica",
+    title: "Forjados en el corazón del desierto",
     subtitle: "El Manifiesto Somanos",
-    text1: "Ica no es solo tierra de viñedos centenarios y sol abrasador; es un territorio indómito con aguas subterráneas ricas en minerales ideales para forjar cervezas artesanal con carácter inolvidable.",
-    text2: "Encarnados en la figura de nuestro maestro cervecero LVJ —con su característico sombrero campestre y gafas oscuras— desafiamos las recetas genéricas. Fermentamos en tanques de acero inoxidable de volumen controlado, sin pasteurización abrasiva, preservando cada matiz de la levadura viva."
+    text1: "Ica es tierra de sol eterno, oasis legendarios y una mística indómita. De sus fuentes de agua profunda y el carácter de nuestra región, forjamos cervezas artesanales de autor con personalidad propia y matices inolvidables.",
+    text2: "Bajo la visión de nuestro maestro cervecero LVJ —con su inconfundible sombrero y estilo auténtico— creamos recetas exclusivas elaboradas en pequeños lotes. Cuidamos cada detalle sin apresurar el tiempo sagrado de maduración y respetando el aroma natural de ingredientes 100% puros."
   }
 };

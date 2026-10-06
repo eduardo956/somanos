@@ -77,47 +77,37 @@ export const StoryManifesto = () => {
           <div className="lg:col-span-6 flex flex-col gap-6">
             <div className="relative w-full aspect-video bg-black overflow-hidden border border-[#353437] shadow-2xl">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBixy-uo7alDBYEIl8tqYpv6eWnoP2ym6uJ017_iA0p1PJbHIwGD8IQbd_Dgi8XKjzYrRupCWQ3VXILJSsgnkYUP0QdTZpgiSwdqLJUFSd2DmAZLglMbRa8BY_csSQ3meaaCrrKOim-nKOP-hYDeKJEdAjHyKfqv7KlgRtLnrOQt1tPmT4LkNbx7bktfcJUYQlAzIyQylXBF4jzZGOFZ5sPpd-w46wtKikPPd7n9p_k6R7YQfMjJ4CAWA"
-                alt="Planta de fermentación y tanques industriales de Somanos en Ica"
-                className="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
+                src="/images/historia.jpg"
+                alt="Elaboración artesanal de cerveza Somanos en Ica"
+                className="w-full h-full object-cover filter contrast-110 hover:contrast-125 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-              
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
-                <span className="text-white bg-black/80 px-2.5 py-1 border border-[#353437]">
-                  Planta Piloto · Ica, Perú
-                </span>
-                <span className="text-gray-400 bg-black/80 px-2.5 py-1 border border-[#353437]">
-                  Reg. Sanitario: {companyInfo.sanitaryReg}
-                </span>
-              </div>
             </div>
 
             {/* Metric Cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 bg-[#0b0b0d] border border-[#353437]/60 flex flex-col justify-between">
                 <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
-                  Capacidad por Lote
+                  Ediciones en Micro-Lotes
                 </span>
                 <div className="my-3">
                   <span className="font-display text-4xl lg:text-5xl text-white font-bold">500</span>
                   <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">LITROS</span>
                 </div>
                 <p className="text-xs text-gray-400 font-sans">
-                  Micro-lotes cuidados para garantizar frescura y máxima potencia organoléptica.
+                  Lotes pequeños y exclusivos para garantizar la máxima frescura y sabor en cada botella.
                 </p>
               </div>
 
               <div className="p-6 bg-[#0b0b0d] border border-[#353437]/60 flex flex-col justify-between">
                 <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
-                  Dias de Maduracion
+                  Reposo y Maduración
                 </span>
                 <div className="my-3">
                   <span className="font-display text-4xl lg:text-5xl text-white font-bold">28+</span>
-                  <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">DIAS</span>
+                  <span className="font-mono text-xs text-[#d4af37] ml-1 font-bold">DÍAS</span>
                 </div>
                 <p className="text-xs text-gray-400 font-sans">
-                  Sin apuros industriales; respetamos el tiempo sagrado de reposo cervecero.
+                  Sin prisa comercial; respetamos el tiempo natural de fermentación y maduración en frío.
                 </p>
               </div>
             </div>
