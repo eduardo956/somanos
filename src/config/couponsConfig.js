@@ -6,7 +6,7 @@ export const COUPONS_CONFIG = [
     code: "4SOMANOS26",
     type: "percentage", // 'percentage' (% de descuento) o 'fixed' (monto fijo en soles S/)
     discountValue: 10,  // 10% de descuento sobre el subtotal
-    expirationDate: "2027-12-31", // Fecha límite AAAA-MM-DD
+    expirationDate: "2026-12-31", // Fecha límite AAAA-MM-DD
     isActive: true,
     successMessage: "¡Felicidades! Eres acreedor de un descuento por vernos en redes.",
     label: "Descuento por Redes Sociales"
